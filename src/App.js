@@ -5,15 +5,15 @@ import CityWeather from './components/CityWeather';
 function App() {
 
   const [city, setCity] = useState("");
-  const [cityWeather, setCityWeather] = useState({});
+  const [cityWeather, setCityWeather] = useState(0);
   const fetchCityWeather = ()=>{
     fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=1dc861629d885f6ae8deb02ee6214529      `
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=1dc861629d885f6ae8deb02ee6214529`
     )
     .then((response)=>response.json())  
     .then((result)=>{
-      setCityWeather(result);
-      console.log(cityWeather['main']['temp']);
+      setCityWeather(result.main.temp);
+      console.log(result.main.temp);
     })
     .catch((error)=>{
       console.log("error is", error);
@@ -24,7 +24,7 @@ function App() {
   return (
     <>
       <CityInput city={city} setCity={setCity} fetchCityWeather={fetchCityWeather} />
-      <CityWeather cityWeather={cityWeather} /> 
+      <CityWeather temp={cityWeather} /> 
     </>
   );
 }

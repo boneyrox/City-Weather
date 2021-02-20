@@ -16,8 +16,9 @@ const CityInput = ({city,setCity,fetchCityWeather})=> {
         if(!city){
             setError('City field is empty!!!');
         }else{
-            setError('');
+            //setError('');
             fetchCityWeather();
+            console.log('handleclick called!')
         }
     }
 

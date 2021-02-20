@@ -7,12 +7,12 @@ const CityWeather = ({temp})=> {
     // let tempValue = cityWeather['main']['temp'];
     // console.log(tempValue);
     // let description = cityWeather['weather'][0]['description']
+    
     return (
-        <div>
+        
             <h1>{temp}</h1>
-            {/* <p>{tempValue}</p> */}
-            {/* <p>{description}</p> */}
-        </div>
+            
+      
     )
 }
 
