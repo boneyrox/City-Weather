@@ -5,7 +5,7 @@ import CityWeather from './components/CityWeather';
 function App() {
 
   const [city, setCity] = useState("");
-  const [cityWeather, setCityWeather] = useState(0);
+  const [cityWeather, setCityWeather] = useState("");
   const fetchCityWeather = ()=>{
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=1dc861629d885f6ae8deb02ee6214529`
